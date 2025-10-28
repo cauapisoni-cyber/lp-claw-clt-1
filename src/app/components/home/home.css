@@ -1,0 +1,579 @@
+/* Container Crédito */
+.credito-container {
+  max-width: 480px;
+  margin: 50px auto;
+  padding: 35px;
+  background-color: #fefefe;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 0, 128, 0.2);
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+.logo img {
+  max-width: 150px;
+  height: auto;
+  display: block;
+}
+
+/* Títulos e subtítulos */
+.credito-title {
+  font-family: 'Sora', sans-serif;
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  color: #9c27b0;
+  margin: 15px 0;
+}
+.credito-subtitle {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 10px;
+}
+.credito-instruction {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Formulário */
+.credito-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: left;
+}
+.credito-form label {
+  font-weight: bold;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+}
+.credito-form input,
+.credito-form select {
+  padding: 12px 15px;
+  margin-top: 5px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+.credito-form input:focus,
+.credito-form select:focus {
+  border-color: #9c27b0;
+}
+.credito-form button {
+  background-color: #ff0080;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 14px 0;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.credito-form button:hover {
+  background-color: #e60073;
+  transform: scale(1.05);
+}
+
+/* Seção Pessoas */
+.credit-section {
+  background: linear-gradient(180deg, #9b38e8 0%, #7c1ed7 100%);
+  color: #fff;
+  padding: 60px 20px 0 20px;
+  font-family: 'Arial', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+.credit-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+.text-content {
+  flex: 1 1 500px;
+  max-width: 600px;
+}
+.text-content h1 {
+  font-size: 2.8rem;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+.text-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+.benefits-title {
+  margin-top: 20px;
+  font-weight: bold;
+}
+.benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 25px 0;
+}
+.benefits-list li::before {
+  content: '•';
+  color: #ff2e75;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+/* Botão CTA */
+.cta-button {
+  display: inline-block;
+  background-color: #ff2e75;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  padding: 14px 35px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
+}
+.cta-button:hover {
+  background-color: #e02a65;
+  transform: scale(1.05);
+}
+
+/* Imagem da seção Pessoas */
+.image-content {
+  flex: 1 1 600px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: 0;
+  position: relative;
+}
+.image-content img {
+  width: 100%;
+  max-width: none;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  object-fit: cover;
+  transform: translateY(10%);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .credit-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .text-content,
+  .image-content {
+    max-width: 100%;
+    text-align: center;
+  }
+  .credito-title {
+    font-size: 36px;
+  }
+  .text-content h1 {
+    font-size: 2rem;
+  }
+  .image-content img {
+    transform: translateY(0);
+  }
+}
+
+.cta-button {
+  padding: 12px 24px;
+  border-radius: 8px;
+  margin-bottom: 50px;
+  transition: background-color 0.3s ease;
+}
+
+/* Vantagens do Crédito */
+.vantagens-section {
+  padding: 60px 20px;
+  background-color: #fff;
+  font-family: 'Arial', sans-serif;
+}
+
+.vantagens-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  flex: 1 1 600px;
+}
+
+.card {
+  background-color: #f9f9f9;
+  border: 2px solid #ffc0e6;
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #9c27b0;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #333;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  border-color: #9c27b0;
+}
+
+.icon {
+  font-size: 1.2rem;
+  margin-right: 5px;
+}
+
+/* Informações à direita */
+.info {
+  flex: 1 1 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.info h2 {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #9c27b0;
+  margin-bottom: 20px;
+}
+
+.info p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.info .cta-button {
+  display: inline-block;
+  background-color: #ff0080;
+  color: #fff;
+  font-weight: bold;
+  padding: 14px 35px;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.info .cta-button:hover {
+  background-color: #e60073;
+  transform: scale(1.05);
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+  .vantagens-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+  .info h2 {
+    font-size: 1.6rem;
+  }
+}
+
+/* FAQ Section */
+.faq-section {
+  background-color: #9c27b0;
+  color: #fff;
+  padding: 80px 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.faq-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.faq-text {
+  flex: 1 1 400px;
+}
+
+.faq-text h1 {
+  font-family: 'Sora', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.faq-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: #f5e4ff;
+}
+
+.faq-button {
+  display: inline-block;
+  background-color: #ff0080;
+  color: #fff;
+  font-weight: bold;
+  padding: 14px 30px;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.faq-button:hover {
+  background-color: #e60073;
+  transform: scale(1.05);
+}
+
+/* FAQ List */
+.faq-list {
+  flex: 1 1 600px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 25px 30px;
+}
+
+.faq-list details {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  margin-bottom: 15px;
+  padding: 15px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.faq-list details:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.faq-list summary {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #fff;
+  list-style: none;
+}
+
+.faq-list p {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: #f5e4ff;
+  line-height: 1.5;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .faq-container {
+    flex-direction: column;
+  }
+
+  .faq-text h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Seção Especialista */
+.especialista-section {
+  background-color: #ff0080;
+  color: #fff;
+  padding: 80px 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.especialista-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+/* Imagens */
+.especialista-imagens {
+  flex: 1 1 500px;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+}
+
+/* img1 menor */
+.img-principal {
+  width: 100%;
+}
+.img-principal img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Texto */
+.especialista-texto {
+  flex: 1 1 500px;
+}
+
+.especialista-texto h1 {
+  font-family: 'Sora', sans-serif;
+  font-size: 2.6rem;
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.especialista-texto .intro {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.especialista-lista {
+  list-style: none;
+  margin-bottom: 30px;
+}
+
+.especialista-lista li {
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.especialista-lista li::before {
+  content: '•';
+  color: #fff;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* Dados */
+.especialista-dados p {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+.especialista-dados strong {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #fff;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+  .especialista-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .especialista-imagens {
+    position: relative;
+    align-items: center;
+    width: 100%;
+  }
+
+  .img-principal {
+    width: 100%;
+    margin: 0 auto 20px;
+  }
+  .especialista-texto h1 {
+    font-size: 2rem;
+  }
+
+  .especialista-dados p {
+    font-size: 1rem;
+  }
+}
+.credito-form small {
+  display: block;
+  margin-top: 5px;
+  font-size: 12px;
+  color: #ff2e75; /* cor de destaque para erro */
+  font-weight: 600;
+  text-align: left;
+}
+
+/* Se quiser adicionar animação suave */
+.credito-form small.ng-animating {
+  transition: opacity 0.3s ease;
+  opacity: 1;
+}
+/* Mensagem caso elegível */
+.elegivel {
+  background-color: #e6f9f1; /* verde claro suave */
+  border: 1px solid #34c759; /* borda verde mais escura */
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 20px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  font-family: 'Sora', sans-serif;
+  color: #1a1a1a;
+}
+
+.elegivel p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.elegivel button {
+  background-color: #34c759; /* verde principal */
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.elegivel button:hover {
+  background-color: #28a745; /* verde mais escuro ao passar o mouse */
+  transform: translateY(-2px);
+}
+
+.elegivel button:active {
+  transform: translateY(0);
+}

@@ -1,0 +1,41 @@
+.main-header {
+  background-color: #9b1fb5; /* Cor roxa principal extraída do Elementor */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 140px; /* altura conforme o inspecionado */
+  border-radius: 0 0 10px 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* imagem de fundo como camada decorativa (se quiser o overlay) */
+.main-header::before {
+  content: "";
+  background-image: url("https://lp.clawexpress.com.br/wp-content/uploads/2025/05/Design-sem-nome-30.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.06;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  z-index: 2; /* garante que fique acima do overlay */
+}
+
+.header-logo {
+  max-height: 80px;
+  width: auto;
+  object-fit: contain;
+}
