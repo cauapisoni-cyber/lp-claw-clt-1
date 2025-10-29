@@ -3,6 +3,27 @@
 ============================== */
 @import url("https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;900&display=swap");
 
+.social-btn {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.instagram-btn {
+  display: inline-block;
+  background-color: #E1306C; /* cor do Instagram */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.instagram-btn:hover {
+  background-color: #C13584;
+  transform: scale(1.05);
+}
+
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));

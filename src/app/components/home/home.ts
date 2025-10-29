@@ -1,32 +1,37 @@
-import { Component, inject, NgZone, ChangeDetectorRef } from '@angular/core';
+import {Component, inject, NgZone, ChangeDetectorRef, OnInit} from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { FormsModule } from '@angular/forms';
 import { NgIf } from '@angular/common';
+import { Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
+import {NgxMaskDirective} from 'ngx-mask';
 
 interface Credito {
   nome: string;
   cpf: string;
   whatsapp: string;
-  carteira: string;       // 'Sim' | 'Não'
-  tempoEmprego: string;   // '0 a 3 meses' | '3 a 6 meses' | '6 a 12 meses' | 'Mais de 1 ano'
+  carteira: string;
+  tempoEmprego: string;
 }
 
 @Component({
   selector: 'app-home',
   standalone: true,
   templateUrl: './home.html',
-  imports: [FormsModule, NgIf],
+  imports: [FormsModule, NgIf, NgxMaskDirective],
   styleUrls: ['./home.css']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+
   credito: Credito = {
     nome: '',
     cpf: '',
     whatsapp: '',
     carteira: 'Sim',
-    tempoEmprego: '0 a 3 meses'
+    tempoEmprego: '0 a 5 meses'
   };
 
+  routeRedirect: string | null = null;
   errors: any = {};
   submitting = false;
   errorMessage = '';
@@ -45,6 +50,27 @@ Enquanto isso, não fique de fora das novidades:
 Acompanhe nossas redes sociais e fique por dentro de dicas, atualizações e oportunidades exclusivas sobre o Crédito do Trabalhador, e muito mais!
 
 Não perca nenhuma novidade!💜`;
+
+  constructor(private router: Router) {}
+
+  // pega o primeiro segmento da URL atual, ex.: "/L1/xyz" => "L1"; "/" => null
+  private getFirstSegmentFromUrl(url: string): string | null {
+    const clean = url.split('?')[0].split('#')[0]; // remove query e hash
+    const first = clean.replace(/^\/+/, '').split('/')[0];
+    return first || null;
+  }
+
+  ngOnInit(): void {
+    // valor inicial ao carregar o componente
+    this.routeRedirect = this.getFirstSegmentFromUrl(this.router.url);
+
+    // atualiza quando a navegação termina
+    this.router.events
+      .pipe(filter((e): e is NavigationEnd => e instanceof NavigationEnd))
+      .subscribe(() => {
+        this.routeRedirect = this.getFirstSegmentFromUrl(this.router.url);
+      });
+  }
 
   validarCampos(): boolean {
     this.errors = {};
@@ -79,6 +105,7 @@ Não perca nenhuma novidade!💜`;
   private mesesDeEmprego(): number {
     const t = (this.credito.tempoEmprego || '').toLowerCase();
     if (t.includes('mais de 1 ano')) return 12;
+    if (t.includes('6 a 12 meses')) return 6;
     const m = t.match(/\d+/g);
     if (!m?.length) return 0;
     return Math.max(...m.map(n => parseInt(n, 10)));
@@ -121,11 +148,7 @@ Não perca nenhuma novidade!💜`;
         this.ngZone.run(() => {
           if (!!res.elegivel) {
             this.errorMessage = '';
-            this.elegivelMessage = `Caso Elegível:
-Boa notícia! Sua simulação já está pronta!🎉
-
-Clique no botão abaixo para descobrir qual é o valor disponível para antecipar ainda hoje.
-Fale agora com um dos nossos especialistas no WhatsApp, sem compromisso e de forma 100% segura.`;
+            this.elegivelMessage = `Boa notícia! Sua simulação já está pronta!🎉 Você pode descobrir agora qual é o valor que você pode receber ainda hoje na sua conta! Fale agora com um dos nossos especialistas no WhatsApp, tudo sem compromisso e de forma 100% segura. Clique agora no botão abaixo.`;
             this.mostrarBotaoZap = true;
           } else {
             this.elegivelMessage = '';
@@ -163,4 +186,14 @@ Fale agora com um dos nossos especialistas no WhatsApp, sem compromisso e de for
       '_blank'
     );
   }
+
+  openWhatsappLink(): void {
+    const prefix = this.routeRedirect ? `[${this.routeRedirect}] ` : '';
+    const text = `${prefix}Olá! Vim pelo site da Claw e gostaria de mais informações sobre o Crédito do Trabalhador!`;
+    const url =
+      `https://api.whatsapp.com/send/?phone=554830544121&text=${encodeURIComponent(text)}&type=phone_number&app_absent=0`;
+
+    window.open(url, '_blank');
+  }
+
 }

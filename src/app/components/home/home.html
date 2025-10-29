@@ -21,13 +21,13 @@
 
     <label>
       Seu CPF:
-      <input type="text" [(ngModel)]="credito.cpf" placeholder="Insira seu CPF" maxlength="11">
+      <input type="text" mask="000.000.000-00" [(ngModel)]="credito.cpf" placeholder="Insira seu CPF" maxlength="15">
       <small *ngIf="errors.cpf">{{ errors.cpf }}</small>
     </label>
 
     <label>
       Seu número de WhatsApp:
-      <input type="tel" [(ngModel)]="credito.whatsapp" placeholder="Seu número de WhatsApp" maxlength="11">
+      <input type="tel" mask="(00) 00000-0000" [(ngModel)]="credito.whatsapp" placeholder="Seu número de WhatsApp" maxlength="15">
       <small *ngIf="errors.whatsapp">{{ errors.whatsapp }}</small>
     </label>
 
@@ -42,8 +42,7 @@
     <label>
       Quanto tempo está no emprego atual?
       <select [(ngModel)]="credito.tempoEmprego">
-        <option value="0 a 3 meses">0 a 3 meses</option>
-        <option value="3 a 6 meses">3 a 6 meses</option>
+        <option value="0 a 3 meses">0 a 5 meses</option>
         <option value="6 a 12 meses">6 a 12 meses</option>
         <option value="Mais de 1 ano">Mais de 1 ano</option>
       </select>
@@ -54,6 +53,17 @@
     </button>
 
     <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+    <div class="social-btn" *ngIf="errorMessage">
+      <a
+        href="https://www.instagram.com/clawexpress/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="instagram-btn"
+      >
+        💬 Siga-nos no Instagram
+      </a>
+    </div>
 
     <!-- Mensagem caso elegível -->
     <div class="elegivel" *ngIf="elegivelMessage">
@@ -77,12 +87,7 @@
         <li>Parcelas descontadas direto da folha</li>
         <li>Tudo rápido, fácil e sem complicação</li>
       </ul>
-      <a class="cta-button"
-         href="https://api.whatsapp.com/send/?phone=554830544121&text=[L1]+Ol%C3%A1%21+Vim+pelo+site+da+Claw+e+gostaria+de+mais+informa%C3%A7%C3%B5es+sobre+o+Cr%C3%A9dito+do+Trabalhador%21&type=phone_number&app_absent=0"
-         target="_blank"
-         rel="noopener noreferrer">
-        Simule Agora
-      </a>
+      <button class="cta-button" (click)="openWhatsappLink()">Simule Agora</button>
     </div>
     <div class="image-content">
       <img src="/img/pessoas.webp" alt="Pessoas Claw Express" loading="lazy">
@@ -122,12 +127,7 @@
     <div class="info">
       <h2>Vantagens do Crédito do Trabalhador</h2>
       <p>O Crédito do Trabalhador foi criado para valorizar quem trabalha com carteira assinada. Com taxas reduzidas e processo simplificado, você tem acesso a um empréstimo justo, sem burocracia e com parcelas descontadas diretamente do seu salário. Simule agora e descubra quanto você pode obter para realizar seus projetos.</p>
-      <a class="cta-button text-center"
-         href="https://api.whatsapp.com/send/?phone=554830544121&text=[L1]+Ol%C3%A1%21+Vim+pelo+site+da+Claw+e+gostaria+de+mais+informa%C3%A7%C3%B5es+sobre+o+Cr%C3%A9dito+do+Trabalhador%21&type=phone_number&app_absent=0"
-         target="_blank"
-         rel="noopener noreferrer">
-        Simule Agora
-      </a>
+      <button class="cta-button" (click)="openWhatsappLink()">Simule Agora</button>
     </div>
   </div>
 </section>
@@ -143,12 +143,7 @@
         Regulamentado pelo Governo Federal, este crédito permite que você obtenha melhores condições financeiras, com taxas de juros
         significativamente menores que as praticadas em empréstimos pessoais convencionais.
       </p>
-      <a href="https://api.whatsapp.com/send/?phone=554830544121&text=[L1]+Ol%C3%A1%21+Vim+pelo+site+da+Claw+e+gostaria+de+mais+informa%C3%A7%C3%B5es+sobre+o+Cr%C3%A9dito+do+Trabalhador%21&type=phone_number&app_absent=0"
-         target="_blank"
-         rel="noopener noreferrer"
-         class="faq-button">
-        Tire suas dúvidas com nossos especialistas
-      </a>
+      <button class="cta-button" (click)="openWhatsappLink()">Tire suas dúvidas com nossos especialistas!</button>
     </div>
 
     <div class="faq-list">
