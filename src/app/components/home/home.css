@@ -46,7 +46,7 @@
 
 .card-icon {
   font-size: 2.5rem;
-  color: #9c27b0;
+  color: #B420b9;
   margin-bottom: 0.5rem;
 }
 
@@ -96,6 +96,90 @@ html, body {
   display: block;
 }
 
+/* Seção geral */
+.credit-section {
+  --section-pad: clamp(16px, 4vw, 48px);
+  --max-w: 1200px;
+  --bg1: #0b0f1a;
+  --bg2: #11192a;
+
+  background: radial-gradient(1200px 600px at 10% 0%, var(--bg2), var(--bg1));
+  color: #fff;
+  padding: var(--section-pad);
+}
+
+.credit-content {
+  margin: 0 auto;
+  max-width: var(--max-w);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(16px, 3vw, 32px);
+  align-items: center;
+}
+
+/* Coluna de texto */
+.text-content .logo-branca {
+  display: block;
+  width: clamp(120px, 18vw, 180px);
+  height: auto;
+  margin-bottom: clamp(8px, 1.6vw, 12px);
+  filter: drop-shadow(0 1px 0 rgba(0,0,0,.2));
+}
+
+.text-content h1 {
+  font-size: clamp(24px, 3.2vw, 40px);
+  line-height: 1.15;
+  font-weight: 800;
+  margin: 6px 0 12px;
+  letter-spacing: -0.02em;
+}
+
+.text-content p {
+  font-size: clamp(14px, 1.2vw, 18px);
+  line-height: 1.6;
+  opacity: .95;
+  margin: 0 0 8px;
+}
+
+.benefits-title {
+  margin-top: 8px;
+  font-weight: 700;
+  font-size: clamp(15px, 1.3vw, 19px);
+}
+
+.benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 18px;
+  display: grid;
+  gap: 8px;
+}
+
+.benefits-list li {
+  position: relative;
+  padding-left: 28px;
+  font-size: clamp(14px, 1.2vw, 18px);
+}
+
+/* Layout lado-a-lado a partir de md */
+@media (min-width: 900px) {
+  .credit-content {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: clamp(24px, 4vw, 56px);
+  }
+  .text-content {
+    padding-right: clamp(8px, 2vw, 24px);
+  }
+}
+
+/* Acessibilidade e pequenos refinamentos */
+@media (prefers-reduced-motion: reduce) {
+  .cta-button {
+    transition: none;
+  }
+}
+
+
 /* Títulos e subtítulos */
 .credito-title {
   font-family: 'Sora', sans-serif;
@@ -103,7 +187,7 @@ html, body {
   font-weight: 900;
   line-height: 1.1;
   letter-spacing: -1px;
-  color: #9c27b0;
+  color: #9B1FB5;
   margin: 15px 0;
 }
 .credito-subtitle {
@@ -142,10 +226,10 @@ html, body {
 }
 .credito-form input:focus,
 .credito-form select:focus {
-  border-color: #9c27b0;
+  border-color: #9B1FB5;
 }
 .credito-form button {
-  background-color: #ff0080;
+  background-color: #FF008A;
   color: white;
   border: none;
   border-radius: 25px;
@@ -161,7 +245,7 @@ html, body {
 
 /* Seção Pessoas */
 .credit-section {
-  background: linear-gradient(180deg, #9b38e8 0%, #7c1ed7 100%);
+  background: #9B1FB5;
   color: #fff;
   font-family: "Sora", sans-serif;
   position: relative;
@@ -200,7 +284,7 @@ html, body {
 }
 .benefits-list li::before {
   content: '•';
-  color: #ff2e75;
+  color: transparent;
   display: inline-block;
   width: 1em;
   margin-left: -1em;
@@ -209,7 +293,7 @@ html, body {
 /* Botão CTA */
 .cta-button {
   display: inline-block;
-  background-color: #ff2e75;
+  background-color: #ff008a;
   border: none;
   color: #fff;
   font-weight: bold;
@@ -274,7 +358,7 @@ html, body {
 
 /* Vantagens do Crédito */
 .vantagens-section {
-  padding: 60px 20px;
+  padding: 110px 40px;
   background-color: #fff;
   font-family: "Sora", sans-serif;
 }
@@ -306,7 +390,7 @@ html, body {
 .card h3 {
   font-size: 1.2rem;
   font-weight: 700;
-  color: #9c27b0;
+  color: #B420b9;
   margin-bottom: 10px;
 }
 
@@ -319,7 +403,7 @@ html, body {
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  border-color: #9c27b0;
+  border-color: #B420b9;
 }
 
 .icon {
@@ -336,9 +420,9 @@ html, body {
 }
 
 .info h2 {
-  font-size: 2rem;
-  font-weight: 900;
-  color: #9c27b0;
+  font-size: 3rem;
+  font-weight: 950;
+  color: #9B1FB5;
   margin-bottom: 20px;
 }
 
@@ -351,7 +435,7 @@ html, body {
 
 .info .cta-button {
   display: inline-block;
-  background-color: #ff0080;
+  background-color: #FF008A;
   color: #fff;
   font-weight: bold;
   padding: 14px 35px;
@@ -387,10 +471,29 @@ html, body {
 
 /* FAQ Section */
 .faq-section {
-  background-color: #9c27b0;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background-color: #9B1FB5;
   color: #fff;
   padding: 80px 20px;
   font-family: "Sora", sans-serif;
+}
+
+.faq-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("https://lp.clawexpress.com.br/wp-content/uploads/2025/05/Design-sem-nome-30.png")
+  center/cover no-repeat;
+  opacity: 0.06;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.faq-section > * {
+  position: relative;
+  z-index: 1;
 }
 
 .faq-container {
@@ -423,7 +526,7 @@ html, body {
 
 .faq-button {
   display: inline-block;
-  background-color: #ff0080;
+  background-color: #FF008A;
   color: #fff;
   font-weight: bold;
   padding: 14px 30px;
@@ -486,10 +589,24 @@ html, body {
 
 /* Seção Especialista */
 .especialista-section {
-  background-color: #ff0080;
+  background-color: #FF008A;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
   color: #fff;
   padding: 80px 20px;
   font-family: "Sora", sans-serif;
+}
+
+.especialista-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("https://lp.clawexpress.com.br/wp-content/uploads/2025/05/Design-sem-nome-30.png")
+  center/cover no-repeat;
+  opacity: 0.06;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .especialista-container {
