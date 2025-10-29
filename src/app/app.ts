@@ -1,15 +1,12 @@
-import { Component, signal } from '@angular/core';
-import { HomeComponent } from './components/home/home';
-import { Footer } from './components/footer/footer';
-import { Header } from './components/header/header';
+import { Component } from '@angular/core';
+import {RouterOutlet} from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HomeComponent, Footer, Header],
   templateUrl: './app.html',
-  styleUrls: ['./app.css']
+  imports: [
+    RouterOutlet
+  ]
 })
-export class AppComponent {
-  title = signal('landing-page-claw-express');
-}
+export class AppComponent {}
