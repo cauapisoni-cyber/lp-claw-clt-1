@@ -1,3 +1,19 @@
+/* ==============================
+   FONTES E RESET BÁSICO
+============================== */
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;900&display=swap");
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "Sora", sans-serif;
+  background-color: #fefefe;
+  color: #333;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+
 /* Container Crédito */
 .credito-container {
   max-width: 480px;
@@ -7,7 +23,7 @@
   border-radius: 12px;
   box-shadow: 0 0 20px rgba(255, 0, 128, 0.2);
   text-align: center;
-  font-family: 'Arial', sans-serif;
+  font-family: "Sora", sans-serif;
 }
 
 /* Logo */
@@ -89,8 +105,7 @@
 .credit-section {
   background: linear-gradient(180deg, #9b38e8 0%, #7c1ed7 100%);
   color: #fff;
-  padding: 60px 20px 0 20px;
-  font-family: 'Arial', sans-serif;
+  font-family: "Sora", sans-serif;
   position: relative;
   overflow: hidden;
 }
@@ -195,7 +210,7 @@
 .cta-button {
   padding: 12px 24px;
   border-radius: 8px;
-  margin-bottom: 50px;
+  margin-bottom: 80px;
   transition: background-color 0.3s ease;
 }
 
@@ -203,7 +218,7 @@
 .vantagens-section {
   padding: 60px 20px;
   background-color: #fff;
-  font-family: 'Arial', sans-serif;
+  font-family: "Sora", sans-serif;
 }
 
 .vantagens-container {
@@ -317,7 +332,7 @@
   background-color: #9c27b0;
   color: #fff;
   padding: 80px 20px;
-  font-family: 'Arial', sans-serif;
+  font-family: "Sora", sans-serif;
 }
 
 .faq-container {
@@ -416,7 +431,7 @@
   background-color: #ff0080;
   color: #fff;
   padding: 80px 20px;
-  font-family: 'Arial', sans-serif;
+  font-family: "Sora", sans-serif;
 }
 
 .especialista-container {
