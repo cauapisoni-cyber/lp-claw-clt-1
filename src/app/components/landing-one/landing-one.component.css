@@ -33,7 +33,7 @@
 }
 
 .card {
-  background: #fff;
+  background: #f5f5f5;
   padding: 1.5rem;
   border-radius: 16px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -65,7 +65,6 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: "Sora", sans-serif;
-  background-color: #fefefe;
   color: #333;
   line-height: 1.6;
   scroll-behavior: smooth;
@@ -104,7 +103,7 @@ html, body {
   --bg2: #11192a;
 
   background: radial-gradient(1200px 600px at 10% 0%, var(--bg2), var(--bg1));
-  color: #fff;
+  color: #f5f5f5;
   padding: var(--section-pad);
 }
 
@@ -245,7 +244,7 @@ html, body {
 /* Seção Pessoas */
 .credit-section {
   background: #9B1FB5;
-  color: #fff;
+  color: #f5f5f5;
   font-family: "Sora", sans-serif;
   position: relative;
   overflow: hidden;
@@ -294,7 +293,7 @@ html, body {
   display: inline-block;
   background-color: #ff008a;
   border: none;
-  color: #fff;
+  color: #f5f5f5;
   font-weight: bold;
   padding: 14px 35px;
   border-radius: 25px;
@@ -359,7 +358,7 @@ html, body {
 /* Vantagens do Crédito */
 .vantagens-section {
   padding: 110px 40px;
-  background-color: #fff;
+  background-color: #f5f5f5;
   font-family: "Sora", sans-serif;
 }
 
@@ -436,7 +435,7 @@ html, body {
 .info .cta-button {
   display: inline-block;
   background-color: #FF008A;
-  color: #fff;
+  color: #f5f5f5;
   font-weight: bold;
   padding: 14px 35px;
   border-radius: 25px;
@@ -475,7 +474,7 @@ html, body {
   overflow: hidden;
   isolation: isolate;
   background-color: #9B1FB5;
-  color: #fff;
+  color: #f5f5f5;
   padding: 80px 20px;
   font-family: "Sora", sans-serif;
 }
@@ -527,7 +526,7 @@ html, body {
 .faq-button {
   display: inline-block;
   background-color: #FF008A;
-  color: #fff;
+  color: #f5f5f5;
   font-weight: bold;
   padding: 14px 30px;
   border-radius: 25px;
@@ -565,7 +564,7 @@ html, body {
 .faq-list summary {
   font-weight: bold;
   font-size: 1rem;
-  color: #fff;
+  color: #f5f5f5;
   list-style: none;
 }
 
@@ -593,7 +592,7 @@ html, body {
   position: relative;
   overflow: hidden;
   isolation: isolate;
-  color: #fff;
+  color: #f5f5f5;
   padding: 80px 20px;
   font-family: "Sora", sans-serif;
 }
@@ -669,7 +668,7 @@ html, body {
 
 .especialista-lista li::before {
   content: '•';
-  color: #fff;
+  color: #f5f5f5;
   position: absolute;
   left: 0;
   top: 0;
@@ -686,7 +685,7 @@ html, body {
   display: block;
   font-size: 1.6rem;
   font-weight: 900;
-  color: #fff;
+  color: #f5f5f5;
 }
 
 /* Responsividade */
@@ -748,7 +747,7 @@ html, body {
 
 .elegivel button {
   background-color: #34c759; /* verde principal */
-  color: #fff;
+  color: #f5f5f5;
   font-weight: 600;
   font-size: 16px;
   padding: 12px 24px;

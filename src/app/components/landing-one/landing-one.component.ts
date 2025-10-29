@@ -142,13 +142,13 @@ Não perca nenhuma novidade!💜`;
 
     this.apiService.enviarCredito(body).subscribe({
       next: (res: any) => {
-        console.log('AAAAAA', res.elegivel);
-
         // Garante atualização do template mesmo se o callback vier fora da Angular Zone
         this.ngZone.run(() => {
           if (!!res.elegivel) {
             this.errorMessage = '';
-            this.elegivelMessage = `Boa notícia! Sua simulação já está pronta!🎉 Você pode descobrir agora qual é o valor que você pode receber ainda hoje na sua conta! Fale agora com um dos nossos especialistas no WhatsApp, tudo sem compromisso e de forma 100% segura. Clique agora no botão abaixo.`;
+            this.elegivelMessage = ` 🎉 Parabéns! Seu crédito foi pré-aprovado!
+Você está muito perto de receber o valor na conta.
+💬 Clique no botão abaixo e fale com nossa equipe pelo WhatsApp para concluir sua contratação agora mesmo.`;
             this.mostrarBotaoZap = true;
           } else {
             this.elegivelMessage = '';
@@ -162,7 +162,7 @@ Não perca nenhuma novidade!💜`;
             cpf: '',
             whatsapp: '',
             carteira: 'Sim',
-            tempoEmprego: '0 a 3 meses'
+            tempoEmprego: '0 a 5 meses'
           };
 
           this.cdr.markForCheck();
