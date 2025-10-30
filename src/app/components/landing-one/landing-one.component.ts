@@ -133,8 +133,8 @@ Não perca nenhuma novidade!💜`;
     const body = {
       document: this.credito.cpf,
       phone: this.credito.whatsapp,
-      originId: 1,
-      code: '002',
+      originId: 2,
+      code: '001',
       name: this.credito.nome,
       chatId: 'string',
       department: 68123
