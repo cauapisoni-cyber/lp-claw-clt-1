@@ -31,7 +31,6 @@ interface Credito {
 })
 export class LandingThreeComponent implements OnInit, AfterViewInit, OnDestroy {
 
-  // ===== Contadores e testimonials =====
   count1 = 0;
   count2 = 0;
   count3 = 0;
@@ -39,6 +38,8 @@ export class LandingThreeComponent implements OnInit, AfterViewInit, OnDestroy {
   currentIndex = 0;
   visibleCount = 3;
   autoSlideInterval: any;
+  alias: string | null = null;
+  variant: string | null = null;
 
   testimonials = [
     { name: 'Joao Victor', text: 'Empresa que realmente cumpre com o que promete. Podem confiar. Eu precisei deles e fui super bem atendido e tive o meu recebimento ok. todos sao muito atenciosos com você. Obg à equipe, forte abraço', stars: 5 },
@@ -106,17 +107,11 @@ Não perca nenhuma novidade!💜`;
 
   constructor(private router: Router) {}
 
-  // ===== Inicialização =====
   ngOnInit(): void {
-    this.routeRedirect = this.getFirstSegmentFromUrl(this.router.url);
-
+    this.extrairAliasEVariavel(this.router.url);
     this.router.events
       .pipe(filter((e): e is NavigationEnd => e instanceof NavigationEnd))
-      .subscribe(() => {
-        this.routeRedirect = this.getFirstSegmentFromUrl(this.router.url);
-      });
-
-    // auto slider testimonials
+      .subscribe((e) => this.extrairAliasEVariavel(e.urlAfterRedirects));
     this.ngZone.runOutsideAngular(() => {
       this.autoSlideInterval = setInterval(() => {
         this.ngZone.run(() => {
@@ -275,12 +270,19 @@ Clique no botão abaixo e fale com nossa equipe pelo WhatsApp para concluir.`;
     });
   }
 
+  private extrairAliasEVariavel(url: string): void {
+    const clean = url.split('?')[0].split('#')[0];
+    const first = clean.replace(/^\/+/, '').split('/')[0];
+    const [alias, variant] = first.split(':');
+    this.alias = alias || null;
+    this.variant = variant || null;
+  }
+
   abrirWhatsApp(): void {
-    const prefix = this.routeRedirect ? `[${this.routeRedirect}] ` : '';
+    const prefix = this.alias && this.variant ? `[${this.alias}, ${this.variant}] ` : this.alias ? `[${this.alias}] ` : '';
     const text = `${prefix}Olá! Vim pelo site da Claw e gostaria de mais informações sobre o Crédito do Trabalhador!`;
     const url = `https://api.whatsapp.com/send/?phone=554830544121&text=${encodeURIComponent(text)}&type=phone_number&app_absent=0`;
     window.open(url, '_blank');
   }
-
 
 }
