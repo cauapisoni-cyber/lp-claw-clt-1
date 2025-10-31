@@ -65,7 +65,6 @@ Não perca nenhuma novidade!💜`;
   ngOnInit(): void {
     // valor inicial ao carregar o componente
     this.routeRedirect = this.getFirstSegmentFromUrl(this.router.url);
-
     // atualiza quando a navegação termina
     this.router.events
       .pipe(filter((e): e is NavigationEnd => e instanceof NavigationEnd))

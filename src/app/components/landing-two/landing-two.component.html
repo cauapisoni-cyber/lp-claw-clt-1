@@ -21,7 +21,7 @@
       descontadas direto na folha de pagamento.
     </p>
 
-    <button class="hero-button">
+    <button class="hero-button" (click)="abrirWhatsApp()">
       Fale Conosco <i class="fa-brands fa-whatsapp"></i>
     </button>
   </div>
@@ -35,47 +35,192 @@
 </section>
 
 <section class="stats-section">
-  <div
-    class="stat-item"
-    style="background-image: url('/img/stats1.png');"
-  >
+  <div class="stat-item" style="background-image: url('/img/11.webp');">
     <div class="overlay"></div>
     <div class="stat-content">
-      <h2 class="stat-number">{{ count1 | number }} mil</h2>
+      <h2 class="stat-number">+ {{ count1 | number }} mil</h2>
       <p class="stat-label">Clientes satisfeitos</p>
     </div>
   </div>
 
-  <div
-    class="stat-item"
-    style="background-image: url('/img/stats2.png');"
-  >
+  <div class="stat-item" style="background-image: url('/img/22.webp');">
     <div class="overlay"></div>
     <div class="stat-content">
-      <h2 class="stat-number">{{ count2 | number }}</h2>
+      <h2 class="stat-number">+ {{ count2 | number }}</h2>
       <p class="stat-label">Avaliações 5 estrelas no Google</p>
     </div>
   </div>
 
-  <div
-    class="stat-item"
-    style="background-image: url('/img/stats3.png');"
-  >
+  <div class="stat-item" style="background-image: url('/img/33.webp');">
     <div class="overlay"></div>
     <div class="stat-content">
-      <h2 class="stat-number">{{ count3 | number }} milhões</h2>
+      <h2 class="stat-number">+ {{ count3 | number }} milhões</h2>
       <p class="stat-label">Em FGTS liberados</p>
     </div>
   </div>
 
-  <div
-    class="stat-item"
-    style="background-image: url('/img/stats4.png');"
-  >
+  <div class="stat-item" style="background-image: url('/img/44.webp');">
     <div class="overlay"></div>
     <div class="stat-content">
-      <h2 class="stat-number">{{ count4 | number }}%</h2>
+      <h2 class="stat-number">+ {{ count4 | number }}%</h2>
       <p class="stat-label">Online</p>
     </div>
   </div>
 </section>
+
+<section class="how-it-works">
+  <div class="how-it-works-wrapper">
+    <h2 class="how-it-works-title">Como funciona?</h2>
+    <div class="steps-container">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3 class="color">Solicitação 100% Online</h3>
+        <p>Sem papelada nem filas, com suporte humanizado!</p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3 class="color">Análise rápida</h3>
+        <p>Usamos seu vínculo empregatício para aprovar seu crédito com segurança.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3 class="color">Pagamento em conta</h3>
+        <p>Aprovou? O valor é transferido direto para a sua conta, simples assim.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">4</div>
+        <h3 class="color">Pagamento facilitado</h3>
+        <p>As parcelas são descontadas automaticamente do seu contracheque, sem preocupações.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="worker-credit">
+  <div class="worker-credit-left">
+    <img src="/img/mulherctps.png" alt="Pessoa segurando carteira de trabalho" class="worker-img">
+  </div>
+  <div class="worker-credit-right">
+    <div class="worker-credit-content">
+      <h2>Você sabe o que é o Crédito do Trabalhador?</h2>
+      <p>
+        O consignado privado é a forma mais prática e segura de obter crédito para quem trabalha com carteira assinada.
+        É um empréstimo destinado a CLT, funcionários de MEIs, trabalhadores rurais e domésticos.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="simulation-section">
+  <h2 class="simulation-title">Simule em minutos, contrate sem burocracia!</h2>
+
+  <div class="simulation-content">
+    <div class="simulation-column left mt-5 mb-5">
+      <div class="simulation-item">
+        <h3>PIX Rápido na Conta</h3>
+        <p>Na parte inferior clicar em "Empréstimos"</p>
+      </div>
+      <div class="simulation-item">
+        <h3>Atendimento Humanizado</h3>
+        <p>Converse com especialistas de verdade, prontos pra te ajudar com o melhor crédito.</p>
+      </div>
+      <div class="simulation-item">
+        <h3>Taxas Competitivas</h3>
+        <p>Desconto direto em folha e condições justas pra quem trabalha com carteira assinada.</p>
+      </div>
+    </div>
+
+    <div class="simulation-image">
+      <img src="/img/celular.png" alt="Celular com conversa de WhatsApp da Claw Express">
+    </div>
+
+    <div class="simulation-column right mt-5 mb-5">
+      <div class="simulation-item">
+        <h3>100% Digital e Seguro</h3>
+        <p>Todo o processo é feito online, com segurança e transparência Claw Express.</p>
+      </div>
+      <div class="simulation-item">
+        <h3>Disponível para Negativados</h3>
+        <p>Mesmo com restrições, você pode ter acesso ao Crédito do Trabalhador.</p>
+      </div>
+      <div class="simulation-item">
+        <h3>Correspondente Autorizado</h3>
+        <p>Trabalhamos conforme o Banco Central, confiança que faz diferença.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="cta-card">
+    <div class="cta-text">
+      <h2>Simule em minutos,<br>contrate sem burocracia!</h2>
+      <p>
+        Te ajudamos a descobrir qual a melhor taxa de juros em tempo recorde,
+        comparando ofertas de diferentes bancos para você escolher a que mais funciona.
+      </p>
+      <button class="cta-button" (click)="abrirWhatsApp()">Saiba Mais</button>
+    </div>
+    <div class="cta-image">
+      <img src="/img/cortadactps.png" alt="Mulher segurando carteira de trabalho">
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <h2>O que dizem sobre nós</h2>
+  <div class="carousel">
+    <button class="nav prev" (click)="prev()">‹</button>
+
+    <div class="cards">
+      <div class="card" *ngFor="let t of visibleTestimonials; let i = index" [class.active]="i === currentIndex">
+        <h3>{{ t.name }}</h3>
+        <div class="stars">
+          <span *ngFor="let star of [].constructor(t.stars)">⭐</span>
+        </div>
+        <p>{{ t.text }}</p>
+      </div>
+    </div>
+
+    <button class="nav next" (click)="next()">›</button>
+
+    <!-- Dots -->
+<!--    <div class="row dots">-->
+<!--      <span *ngFor="let t of testimonials; let i = index"-->
+<!--            [class.active]="i === currentIndex"></span>-->
+<!--    </div>-->
+  </div>
+</section>
+
+
+<footer class="footer-section">
+  <div class="footer-top">
+    <p>Av. Marechal Castelo Branco, 65, Campinas, São José/SC</p>
+    <p>© 2025 Claw Express | CNPJ 26.845.368/0001-55</p>
+    <p><a href="/politica-privacidade" target="_blank">Política de Privacidade</a></p>
+    <a href="https://www.instagram.com" target="_blank" class="footer-social">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+  </div>
+
+  <div class="footer-bottom">
+    <p>
+      A Claw Express não opera como uma entidade financeira e não efetua concessões de crédito de forma direta.
+      Funcionamos como uma interface digital, desempenhando o papel de correspondente bancário, com o objetivo
+      de simplificar o processo de obtenção de empréstimos para nossos usuários. Em nossa atuação como
+      correspondente, estamos em conformidade com as normativas estabelecidas pelo Banco Central do Brasil,
+      seguindo a Resolução nº 3.954, datada de 24 de fevereiro de 2011. A análise para a concessão de crédito
+      é realizada de acordo com os critérios da entidade financeira selecionada pelo cliente. Garantimos que,
+      antes da formalização de qualquer serviço por intermédio de nossos clientes, todas as informações e
+      condições pertinentes ao produto escolhido serão fornecidas de maneira clara e integral. As condições
+      oferecidas, incluindo taxas de juros, margem para empréstimos consignados e prazos para pagamento,
+      são definidas conforme as especificações de cada acordo estabelecido com órgãos Federais, Estaduais e
+      Municipais, Forças Armadas e o INSS, além de respeitarem as políticas de crédito da instituição financeira
+      envolvida.
+    </p>
+  </div>
+</footer>
+

@@ -16,21 +16,30 @@ function landingAliasMatcher(aliases: string[]) {
   };
 }
 
+// Aliases específicos
 const L2_ONLY = ['L2'];
-const ALIASES_EXCEPT_L2 = LANDING_ALIASES.filter(a => a !== 'L2');
+const L3_ONLY = ['L3'];
+const ALIASES_OTHERS = LANDING_ALIASES.filter(a => a !== 'L2' && a !== 'L3');
 
 export const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: DEFAULT_LANDING },
 
-  // EXCEÇÃO: quando for L2, carrega o landing-two
-  // {
-  //   matcher: landingAliasMatcher(L2_ONLY),
-  //   loadComponent: () =>
-  //     import('./components/landing-two/landing-two.component').then(m => m.LandingTwoComponent),
-  // },
+  // EXCEÇÃO: L2 -> LandingTwoComponent
+  {
+    matcher: landingAliasMatcher(L2_ONLY),
+    loadComponent: () =>
+      import('./components/landing-two/landing-two.component').then(m => m.LandingTwoComponent),
+  },
 
-  // Demais aliases (L1, L3..L10) continuam no landing-one
-  { matcher: landingAliasMatcher(ALIASES_EXCEPT_L2), component: LandingOneComponent },
+  // EXCEÇÃO: L3 -> LandingThreeComponent
+  {
+    matcher: landingAliasMatcher(L3_ONLY),
+    loadComponent: () =>
+      import('./components/landing-three/landing-three.component').then(m => m.LandingThreeComponent),
+  },
+
+  // Demais aliases -> LandingOneComponent
+  { matcher: landingAliasMatcher(ALIASES_OTHERS), component: LandingOneComponent },
 
   { path: '**', redirectTo: DEFAULT_LANDING },
 ];
