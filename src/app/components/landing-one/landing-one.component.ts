@@ -5,6 +5,7 @@ import { NgIf } from '@angular/common';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import {NgxMaskDirective} from 'ngx-mask';
+import {SpinnerComponent} from '../../shared/spinner/spinner.component';
 
 interface Credito {
   nome: string;
@@ -18,7 +19,7 @@ interface Credito {
   selector: 'app-landing-one',
   standalone: true,
   templateUrl: './landing-one.component.html',
-  imports: [FormsModule, NgIf, NgxMaskDirective],
+  imports: [FormsModule, NgIf, NgxMaskDirective, SpinnerComponent],
   styleUrls: ['./landing-one.component.css']
 })
 export class LandingOneComponent implements OnInit {
@@ -32,6 +33,7 @@ export class LandingOneComponent implements OnInit {
   };
 
   routeRedirect: string | null = null;
+  loading = false;
   errors: any = {};
   submitting = false;
   errorMessage = '';
@@ -115,6 +117,8 @@ Não perca nenhuma novidade!💜`;
     event?.preventDefault();
     if (!this.validarCampos()) return;
 
+    this.loading = true
+
     const meses = this.mesesDeEmprego();
     const temCarteira = this.credito.carteira === 'Sim';
     if (!temCarteira || meses < 6) {
@@ -155,6 +159,7 @@ Você está muito perto de receber o valor na conta.
             this.submitting = false;
             this.mostrarBotaoZap = false;
             this.errorMessage = this.naoElegivelTexto;
+            this.loading = false;
           }
 
           this.credito = {
@@ -164,7 +169,7 @@ Você está muito perto de receber o valor na conta.
             carteira: 'Sim',
             tempoEmprego: '0 a 5 meses'
           };
-
+          this.loading = false;
           this.cdr.markForCheck();
         });
       },

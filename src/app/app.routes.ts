@@ -23,11 +23,11 @@ export const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: DEFAULT_LANDING },
 
   // EXCEÇÃO: quando for L2, carrega o landing-two
-  {
-    matcher: landingAliasMatcher(L2_ONLY),
-    loadComponent: () =>
-      import('./components/landing-two/landing-two.component').then(m => m.LandingTwoComponent),
-  },
+  // {
+  //   matcher: landingAliasMatcher(L2_ONLY),
+  //   loadComponent: () =>
+  //     import('./components/landing-two/landing-two.component').then(m => m.LandingTwoComponent),
+  // },
 
   // Demais aliases (L1, L3..L10) continuam no landing-one
   { matcher: landingAliasMatcher(ALIASES_EXCEPT_L2), component: LandingOneComponent },

@@ -1,0 +1,82 @@
+:host {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.85);
+  z-index: 99999;
+  animation: fadeBg 1.5s ease-in-out infinite alternate;
+}
+
+svg {
+  width: 280px;
+  height: 280px;
+  transform-origin: center;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+path {
+  stroke: url(#paint0_linear_10_41);
+  stroke-width: 2;
+  fill-opacity: 0;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: drawAndReveal 3s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+}
+
+/* Desenho mais suave */
+@keyframes drawAndReveal {
+  0% {
+    stroke-dashoffset: 1000;
+    fill-opacity: 0;
+  }
+  40% {
+    stroke-dashoffset: 0;
+    fill-opacity: 0.3;
+  }
+  60% {
+    fill-opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 1000;
+    fill-opacity: 0;
+  }
+}
+
+/* Leve pulsação */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+}
+
+/* Fundo com leve respiração */
+@keyframes fadeBg {
+  0% {
+    background: rgba(255, 255, 255, 0.85);
+  }
+  100% {
+    background: rgba(255, 255, 255, 0.9);
+  }
+}
+
+.layout {
+  display: flex;
+}
+
+.sidebar {
+  width: 250px;
+  flex-shrink: 0;
+}
+
+.content {
+  flex: 1;
+  position: relative;
+  min-height: 100vh;
+}

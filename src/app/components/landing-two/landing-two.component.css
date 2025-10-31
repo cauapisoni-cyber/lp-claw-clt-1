@@ -1,0 +1,131 @@
+/* Definindo variáveis no :host para que existam dentro do escopo do componente */
+:host {
+  display: block;
+
+  --color-bg-header: #0b0f1a;
+  --color-bg-primary: #0f1630;
+  --color-bg-secondary: #161d46;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #d6d6d6;
+  --color-accent: #34d861;
+  --color-accent-hover: #2bb254;
+  --radius-lg: 16px;
+  --radius-sm: 8px;
+  --padding-horizontal: 8%;
+}
+
+/* ===== HEADER ===== */
+.main-header {
+  background-color: var(--color-bg-header);
+  padding: 1.2rem var(--padding-horizontal);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-logo {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* ===== HERO SECTION ===== */
+.hero-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6rem var(--padding-horizontal);
+  background: linear-gradient(180deg, var(--color-bg-primary), var(--color-bg-secondary));
+  color: var(--color-text-primary);
+  gap: 2rem;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 3.5rem var(--padding-horizontal);
+  }
+
+  .hero-image img {
+    max-width: 90%;
+  }
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.hero-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1.12;
+  margin: 0 0 1.2rem 0;
+  color: var(--color-text-primary);
+  word-break: keep-all;
+}
+
+/* Ajuste de fonte para telas menores */
+@media (max-width: 600px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+}
+
+.hero-subtitle {
+  color: var(--color-text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 1.8rem;
+}
+
+/* Botão */
+.hero-button {
+  background-color: var(--color-accent);
+  color: var(--color-text-primary);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 1.05rem;
+  font-weight: 600;
+  padding: 0.85rem 1.6rem;
+  cursor: pointer;
+  transition: background-color 0.18s ease, transform 0.12s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  box-shadow: 0 4px 10px rgba(52, 216, 97, 0.14);
+}
+
+.hero-button i {
+  font-size: 1.15rem;
+}
+
+.hero-button:hover,
+.hero-button:focus {
+  background-color: var(--color-accent-hover);
+  transform: translateY(-1px);
+}
+
+/* Imagem */
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 640px;
+  border-radius: var(--radius-lg);
+  object-fit: cover;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+}
