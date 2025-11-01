@@ -1,48 +1,188 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Claw Express</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="/img/favicon.png">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"/>
-  <!-- Bootstrap JS (inclui Popper) -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  <!-- TikTok Pixel Code Start -->
-  <script>
-    !function (w, d, t) {
-      w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
-        var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
-      ;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
-      ttq.load('CGUOGNRC77U6U2VB4U4G');
-      ttq.page();
-    }(window, document, 'ttq');
-  </script>
-  <!-- TikTok Pixel Code End -->
-  <!-- Meta Pixel Code -->
-  <!-- Meta Pixel Code -->
-  <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1542613300499464');
-    fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-                 src="https://www.facebook.com/tr?id=1542613300499464&ev=PageView&noscript=1"
-  /></noscript>
-  <!-- End Meta Pixel Code -->
-  <!-- End Meta Pixel Code -->
-</head>
-<body>
-  <app-root></app-root>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>Claw Express</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="/img/favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <!-- Bootstrap JS (inclui Popper) -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- TikTok Pixel Code Start -->
+    <script>
+      !(function (w, d, t) {
+        w.TiktokAnalyticsObject = t;
+        var ttq = (w[t] = w[t] || []);
+        ttq.methods = [
+          'page',
+          'track',
+          'identify',
+          'instances',
+          'debug',
+          'on',
+          'off',
+          'once',
+          'ready',
+          'alias',
+          'group',
+          'enableCookie',
+          'disableCookie',
+          'holdConsent',
+          'revokeConsent',
+          'grantConsent',
+        ];
+        ttq.setAndDefer = function (t, e) {
+          t[e] = function () {
+            t.push([e].concat(Array.prototype.slice.call(arguments, 0)));
+          };
+        };
+        for (var i = 0; i < ttq.methods.length; i++) ttq.setAndDefer(ttq, ttq.methods[i]);
+        ttq.instance = function (t) {
+          for (var e = ttq._i[t] || [], n = 0; n < ttq.methods.length; n++)
+            ttq.setAndDefer(e, ttq.methods[n]);
+          return e;
+        };
+        ttq.load = function (e, n) {
+          var r = 'https://analytics.tiktok.com/i18n/pixel/events.js',
+            o = n && n.partner;
+          (ttq._i = ttq._i || {}),
+            (ttq._i[e] = []),
+            (ttq._i[e]._u = r),
+            (ttq._t = ttq._t || {}),
+            (ttq._t[e] = +new Date()),
+            (ttq._o = ttq._o || {}),
+            (ttq._o[e] = n || {});
+          n = document.createElement('script');
+          n.type = 'text/javascript';
+          n.async = !0;
+          n.src = r + '?sdkid=' + e + '&lib=' + t;
+          e = document.getElementsByTagName('script')[0];
+          e.parentNode.insertBefore(n, e);
+        };
+        ttq.load('CGUOGNRC77U6U2VB4U4G');
+        ttq.page();
+      })(window, document, 'ttq');
+    </script>
+    <!-- TikTok Pixel Code End -->
+
+    <!-- Meta Pixel Code -->
+    <script>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = '2.0';
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1542613300499464');
+      fbq('track', 'PageView');
+    </script>
+    <noscript>
+      <img
+        height="1"
+        width="1"
+        style="display: none"
+        src="https://www.facebook.com/tr?id=1542613300499464&ev=PageView&noscript=1"
+      />
+    </noscript>
+    <!-- End Meta Pixel Code -->
+
+    <!-- SPA Tracking Helpers (Meta + TikTok) -->
+    <script>
+      (function () {
+        // Evita erros se pixels ainda não carregaram
+        function safeFbq() {
+          return typeof window !== 'undefined' && typeof window.fbq === 'function'
+            ? window.fbq
+            : null;
+        }
+        function safeTtq() {
+          return typeof window !== 'undefined' &&
+            window.ttq &&
+            typeof window.ttq.page === 'function'
+            ? window.ttq
+            : null;
+        }
+
+        // Re-dispara PageView ao trocar de rota (SPA)
+        function trackPageView() {
+          try {
+            safeFbq()?.('track', 'PageView');
+          } catch (e) {}
+          try {
+            safeTtq()?.page();
+          } catch (e) {}
+        }
+
+        // Hook em pushState/replaceState
+        ['pushState', 'replaceState'].forEach(function (method) {
+          var original = history[method];
+          history[method] = function () {
+            var ret = original.apply(this, arguments);
+            // Aguarda próximo tick para garantir que Angular atualizou a URL
+            setTimeout(trackPageView, 0);
+            return ret;
+          };
+        });
+        // Voltar/avançar do navegador
+        window.addEventListener('popstate', trackPageView);
+
+        // Delegação de clique para o botão WhatsApp (dinâmico)
+        // Use data-track="whatsapp" no botão se possível; fallback por texto.
+        document.addEventListener(
+          'click',
+          function (ev) {
+            var el = ev.target;
+            if (!(el instanceof Element)) return;
+            var btn = el.closest('button');
+            if (!btn) return;
+
+            var byDataAttr = btn.getAttribute('data-track') === 'whatsapp';
+            var byText = (btn.textContent || '').toLowerCase().includes('falar no whatsapp');
+
+            if (byDataAttr || byText) {
+              try {
+                safeFbq()?.('trackCustom', 'EntrarEmContato', { canal: 'WhatsApp', origem: 'CLT' });
+              } catch (e) {}
+              try {
+                window.ttq &&
+                  window.ttq.track &&
+                  window.ttq.track('Contact', { method: 'WhatsApp', origin: 'CLT' });
+              } catch (e) {}
+            }
+          },
+          { capture: true }
+        );
+      })();
+    </script>
+    <!-- Fim SPA Tracking Helpers -->
+  </head>
+  <body>
+    <app-root></app-root>
+  </body>
 </html>
