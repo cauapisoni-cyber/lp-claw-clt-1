@@ -86,16 +86,20 @@
           <option value="Mais de 1 ano">Mais de 1 ano</option>
         </select>
       </label>
+
+      <!--ENVIAR-->
       <button type="button" (click)="enviarCredito()" [disabled]="submitting">Enviar</button>
       <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+      <!-- Mensagem caso elegível -->
       <div class="social-btn" *ngIf="errorMessage">
         <a href="https://www.instagram.com/clawexpress/" target="_blank" rel="noopener noreferrer" class="instagram-btn">💬 Siga-nos no Instagram</a>
       </div>
-      <!-- Mensagem caso elegível -->
-      <div class="elegivel">
-        <p>{{ elegivelMessage || '' }}</p>
-        <button type="button" (click)="abrirWhatsApp()">Falar no WhatsApp 💬</button>
-      </div>
+
+      <!--WHATSAPP-->
+      <button type="button" (click)="abrirWhatsApp()">Falar no WhatsApp 💬</button>
+      <p>{{ elegivelMessage || '' }}</p>
+
     </div>
   </div>
 </div>
