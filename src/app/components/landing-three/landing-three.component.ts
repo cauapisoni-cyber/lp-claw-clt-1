@@ -280,7 +280,6 @@ Clique no botão abaixo e fale com nossa equipe pelo WhatsApp para concluir.`;
   }
 
   abrirWhatsApp(): void {
-    // Dispara o Meta Pixel manualmente
     if (typeof fbq !== 'undefined') {
       fbq('track', 'Contact', { method: 'WhatsApp' });
     }
