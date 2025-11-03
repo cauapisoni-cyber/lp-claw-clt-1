@@ -94,16 +94,7 @@
       <!-- Mensagem caso elegível -->
       <div class="elegivel">
         <p>{{ elegivelMessage || '' }}</p>
-        <button
-          type="button"
-          id="send-credit"
-          class="whatsapp-btn"
-          data-track="whatsapp"
-          [disabled]="!elegivelMessage"
-          (click)="abrirWhatsApp()"
-        >
-          Falar no WhatsApp 💬
-        </button>
+        <button type="button" (click)="abrirWhatsApp()">Falar no WhatsApp 💬</button>
       </div>
     </div>
   </div>

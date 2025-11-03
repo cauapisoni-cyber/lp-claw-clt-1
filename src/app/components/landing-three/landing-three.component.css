@@ -957,13 +957,13 @@ body{
   transform: scale(1.05);
 }
 
-.elegivel[disabled],
-.elegivel.disabled,
-.elegivel:has(button:disabled) {
-  filter: blur(4px); /* aplica o blur */
-  pointer-events: none; /* impede interação */
-  transition: filter 0.3s ease; /* animação suave */
-}
+/*.elegivel[disabled],*/
+/*.elegivel.disabled,*/
+/*.elegivel:has(button:disabled) {*/
+/*  filter: blur(4px); !* aplica o blur *!*/
+/*  pointer-events: none; !* impede interação *!*/
+/*  transition: filter 0.3s ease; !* animação suave *!*/
+/*}*/
 
 /* Mensagem de elegibilidade */
 .elegivel {
