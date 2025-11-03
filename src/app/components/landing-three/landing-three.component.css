@@ -957,6 +957,15 @@ body{
   transform: scale(1.05);
 }
 
+.elegivel[disabled],
+.elegivel.disabled,
+.elegivel:has(button:disabled) {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
 /* Mensagem de elegibilidade */
 .elegivel {
   background-color: #e6f9f1;

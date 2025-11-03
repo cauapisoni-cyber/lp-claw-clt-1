@@ -78,7 +78,6 @@
           <option value="Não">Não</option>
         </select>
       </label>
-
       <label>
         Quanto tempo está no emprego atual?
         <select [(ngModel)]="credito.tempoEmprego">
@@ -87,27 +86,18 @@
           <option value="Mais de 1 ano">Mais de 1 ano</option>
         </select>
       </label>
-
       <button type="button" (click)="enviarCredito()" [disabled]="submitting">Enviar</button>
-
       <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
-
       <div class="social-btn" *ngIf="errorMessage">
-        <a
-          href="https://www.instagram.com/clawexpress/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="instagram-btn"
-        >
-          💬 Siga-nos no Instagram
-        </a>
+        <a href="https://www.instagram.com/clawexpress/" target="_blank" rel="noopener noreferrer" class="instagram-btn">💬 Siga-nos no Instagram</a>
       </div>
-
       <!-- Mensagem caso elegível -->
-      <div class="elegivel" *ngIf="elegivelMessage">
-        <p>{{ elegivelMessage }}</p>
+      <div class="elegivel">
+        <p>{{ elegivelMessage || '' }}</p>
         <button
           type="button"
+          id="send-credit"
+          class="whatsapp-btn"
           data-track="whatsapp"
           [disabled]="!elegivelMessage"
           (click)="abrirWhatsApp()"
@@ -289,11 +279,7 @@
   <div class="footer-top">
     <p>Av. Marechal Castelo Branco, 65, Campinas, São José/SC</p>
     <p>© 2025 Claw Express | CNPJ 26.845.368/0001-55</p>
-    <p>
-      <a href="https://clawexpress.com.br/politica-de-privacidade/" target="_blank"
-        >Política de Privacidade</a
-      >
-    </p>
+    <p><a href="/privacy" target="_blank">Política de Privacidade</a></p>
     <a href="https://www.instagram.com" target="_blank" class="footer-social">
       <i class="fa-brands fa-instagram"></i>
     </a>

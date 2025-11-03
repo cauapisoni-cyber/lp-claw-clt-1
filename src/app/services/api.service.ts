@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ApiService {
   private http = inject(HttpClient);
-  private apiUrl = 'https://api-clawexpress.com.br/api/clt/simulate';
+  private apiUrl = 'https://api-clawexpress.com.br/api/clt/simulate/lp';
 
   enviarCredito(data: any): Observable<any> {
     return this.http.post(this.apiUrl, data);
