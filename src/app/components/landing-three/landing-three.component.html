@@ -89,19 +89,17 @@
       </label>
 
       <button type="button" (click)="enviarCredito()" [disabled]="submitting">Enviar</button>
-      <button type="button" (click)="enviarCredito()" [disabled]="submitting">Enviar 2</button>
-
-<!--      <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>-->
-<!--      <div class="social-btn" *ngIf="errorMessage">-->
-<!--        <a href="https://www.instagram.com/clawexpress/" target="_blank" rel="noopener noreferrer" class="instagram-btn">💬 Siga-nos no Instagram</a>-->
-<!--      </div>-->
-<!--      &lt;!&ndash; Mensagem caso elegível &ndash;&gt;-->
-<!--      <div class="elegivel" *ngIf="elegivelMessage">-->
-<!--        <p>{{ elegivelMessage }}</p>-->
-<!--        <button type="button" data-track="whatsapp" [disabled]="!elegivelMessage" (click)="abrirWhatsApp()">-->
-<!--          Falar no WhatsApp 💬-->
-<!--        </button>-->
-<!--      </div>-->
+      <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+      <div class="social-btn" *ngIf="errorMessage">
+        <a href="https://www.instagram.com/clawexpress/" target="_blank" rel="noopener noreferrer" class="instagram-btn">💬 Siga-nos no Instagram</a>
+      </div>
+      <!-- Mensagem caso elegível -->
+      <div class="elegivel" *ngIf="elegivelMessage">
+        <p>{{ elegivelMessage }}</p>
+        <button type="button" [disabled]="!elegivelMessage" (click)="abrirWhatsApp()">
+          Falar no WhatsApp 💬
+        </button>
+      </div>
     </div>
   </div>
 </div>

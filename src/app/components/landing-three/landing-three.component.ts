@@ -22,6 +22,8 @@ interface Credito {
   tempoEmprego: string;
 }
 
+declare var fbq: any;
+
 @Component({
   selector: 'app-landing-three',
   standalone: true,
@@ -30,7 +32,6 @@ interface Credito {
   styleUrls: ['./landing-three.component.css']
 })
 export class LandingThreeComponent implements OnInit, AfterViewInit, OnDestroy {
-
   count1 = 0;
   count2 = 0;
   count3 = 0;
@@ -279,6 +280,10 @@ Clique no botão abaixo e fale com nossa equipe pelo WhatsApp para concluir.`;
   }
 
   abrirWhatsApp(): void {
+    // Dispara o Meta Pixel manualmente
+    if (typeof fbq !== 'undefined') {
+      fbq('track', 'Contact', { method: 'WhatsApp' });
+    }
     const prefix = `[${this.variant}]`;
     const text = `${prefix}${prefix.endsWith(' ') ? '' : ' '}Olá! Vim pelo site da Claw e gostaria de mais informações sobre o Crédito do Trabalhador!`;
     const url = `https://api.whatsapp.com/send/?phone=554830544121&text=${encodeURIComponent(text)}&type=phone_number&app_absent=0`;
