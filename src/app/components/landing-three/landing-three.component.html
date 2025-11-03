@@ -78,6 +78,7 @@
           <option value="Não">Não</option>
         </select>
       </label>
+
       <label>
         Quanto tempo está no emprego atual?
         <select [(ngModel)]="credito.tempoEmprego">
@@ -87,19 +88,18 @@
         </select>
       </label>
 
-      <!--ENVIAR-->
       <button type="button" (click)="enviarCredito()" [disabled]="submitting">Enviar</button>
       <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
-
-      <!-- Mensagem caso elegível -->
       <div class="social-btn" *ngIf="errorMessage">
         <a href="https://www.instagram.com/clawexpress/" target="_blank" rel="noopener noreferrer" class="instagram-btn">💬 Siga-nos no Instagram</a>
       </div>
-
-      <!--WHATSAPP-->
-      <button type="button" (click)="abrirWhatsApp()">Falar no WhatsApp 💬</button>
-      <p>{{ elegivelMessage || '' }}</p>
-
+      <!-- Mensagem caso elegível -->
+      <div class="elegivel" *ngIf="elegivelMessage">
+        <p>{{ elegivelMessage }}</p>
+        <button type="button" data-track="whatsapp" [disabled]="!elegivelMessage" (click)="abrirWhatsApp()">
+          Falar no WhatsApp 💬
+        </button>
+      </div>
     </div>
   </div>
 </div>
