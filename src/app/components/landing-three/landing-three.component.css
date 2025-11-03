@@ -960,10 +960,9 @@ body{
 .elegivel[disabled],
 .elegivel.disabled,
 .elegivel:has(button:disabled) {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
+  filter: blur(4px); /* aplica o blur */
+  pointer-events: none; /* impede interação */
+  transition: filter 0.3s ease; /* animação suave */
 }
 
 /* Mensagem de elegibilidade */
