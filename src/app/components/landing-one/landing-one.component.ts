@@ -186,7 +186,7 @@ Você está muito perto de receber o valor na conta.
 
   abrirWhatsApp(): void {
     window.open(
-      'https://api.whatsapp.com/send/?phone=554830544121&text=Ol%C3%A1%21+Vim+pelo+site+da+Claw+e+gostaria+de+mais+informa%C3%A7%C3%B5es+sobre+o+Cr%C3%A9dito+do+Trabalhador%21&type=phone_number&app_absent=0',
+      'https://api.whatsapp.com/send/?phone=554831980426&text=Ol%C3%A1%21+Vim+pelo+site+da+Claw+e+gostaria+de+mais+informa%C3%A7%C3%B5es+sobre+o+Cr%C3%A9dito+do+Trabalhador%21&type=phone_number&app_absent=0',
       '_blank'
     );
   }
