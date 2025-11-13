@@ -153,7 +153,7 @@ export class LandingTwoComponent implements OnInit, AfterViewInit, OnDestroy {
   abrirWhatsApp(): void {
     const prefix = `[${this.variant}]`;
     const text = `${prefix}${prefix.endsWith(' ') ? '' : ' '}Olá! Vim pelo site da Claw e gostaria de mais informações sobre o Crédito do Trabalhador!`;
-    const url = `https://api.whatsapp.com/send/?phone=554831980426&text=${encodeURIComponent(text)}&type=phone_number&app_absent=0`;
+    const url = `https://api.whatsapp.com/send/?phone=554830544121&text=${encodeURIComponent(text)}&type=phone_number&app_absent=0`;
     window.open(url, '_blank');
   }
 
