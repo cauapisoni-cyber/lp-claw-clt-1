@@ -117,7 +117,7 @@
   <div class="stat-item" style="background-image: url('/img/22.webp')">
     <div class="overlay"></div>
     <div class="stat-content">
-      <h2 class="stat-number">+ {{ count2 | number }}</h2>
+      <h2 class="stat-number">+ {{ count2.toLocaleString('pt-BR') }}</h2>
       <p class="stat-label">Avaliações 5 estrelas no Google</p>
     </div>
   </div>
@@ -133,7 +133,7 @@
   <div class="stat-item" style="background-image: url('/img/44.webp')">
     <div class="overlay"></div>
     <div class="stat-content">
-      <h2 class="stat-number">+ {{ count4 | number }}%</h2>
+      <h2 class="stat-number"> {{ count4 | number }}%</h2>
       <p class="stat-label">Online</p>
     </div>
   </div>
